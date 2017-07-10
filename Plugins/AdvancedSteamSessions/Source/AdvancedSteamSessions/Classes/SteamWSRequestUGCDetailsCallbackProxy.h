@@ -32,6 +32,7 @@
 
 #include "SteamWSRequestUGCDetailsCallbackProxy.generated.h"
 
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBlueprintWorkshopDetailsDelegate, const FBPSteamWorkshopItemDetails&, WorkShopDetails);
 
 UCLASS(MinimalAPI)
@@ -49,7 +50,7 @@ class USteamWSRequestUGCDetailsCallbackProxy : public UOnlineBlueprintCallProxyB
 
 	// Ends the current session
 	UFUNCTION(BlueprintCallable, meta=(BlueprintInternalUseOnly = "true", WorldContext="WorldContextObject"), Category = "Online|AdvancedSteamWorkshop")
-	static USteamWSRequestUGCDetailsCallbackProxy* GetWorkshopItemDetails(UObject* WorldContextObject, FBPSteamWorkshopID WorkShopID);
+	static USteamWSRequestUGCDetailsCallbackProxy* GetWorkshopItemDetails(UObject* WorldContextObject, FBPSteamWorkshopID WorkShopID, int32 NumSecondsBeforeTimeout);
 
 	// UOnlineBlueprintCallProxyBase interface
 	virtual void Activate() override;
@@ -59,14 +60,17 @@ private:
 	
 #if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
 	// Internal callback when the operation completes, calls out to the public success/failure callbacks
-		
-	void OnUGCRequestUGCDetails(SteamUGCQueryCompleted_t *pResult, bool bIOFailure);
-	CCallResult<USteamWSRequestUGCDetailsCallbackProxy, SteamUGCQueryCompleted_t> m_callResultUGCRequestDetails;
-
+	/* Steam UGC details */
+	//STEAM_CALLBACK(USteamWSRequestUGCDetailsCallbackProxy, OnUGCRequestUGCDetails, SteamUGCRequestUGCDetailsResult_t, OnUGCRequestUGCDetailsCallback);
+	void OnUGCRequestUGCDetails(SteamUGCRequestUGCDetailsResult_t *pResult, bool bIOFailure);
+	CCallResult<USteamWSRequestUGCDetailsCallbackProxy, SteamUGCRequestUGCDetailsResult_t> m_callResultUGCRequestDetails;
 #endif
 
 private:
 
 	FBPSteamWorkshopID WorkShopID;
+
+	int32 NumSecondsBeforeTimeout;
+
 	UObject* WorldContextObject;
 };

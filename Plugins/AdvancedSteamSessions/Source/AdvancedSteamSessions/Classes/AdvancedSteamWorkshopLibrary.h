@@ -48,14 +48,14 @@ struct FBPSteamWorkshopID
 
 public:
 
-	uint64 SteamWorkshopID;
+	uint32 SteamWorkshopID;
 
 	FBPSteamWorkshopID()
 	{
 
 	}
 
-	FBPSteamWorkshopID(uint64 ID)
+	FBPSteamWorkshopID(uint32 ID)
 	{
 		SteamWorkshopID = ID;
 	}
