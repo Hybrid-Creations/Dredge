@@ -36,7 +36,7 @@ struct FBlueprintSessionResult;
 	}; \
 	struct AdvancedFriendsInterface_eventOnSessionInviteAccepted_Parms \
 	{ \
-		FBPUniqueNetId PersonInviting; \
+		FBPUniqueNetId PersonInvited; \
 		FBlueprintSessionResult SearchResult; \
 	}; \
 	struct AdvancedFriendsInterface_eventOnSessionInviteReceived_Parms \
@@ -107,7 +107,7 @@ public: \
 	static void Execute_OnPlayerLoginChanged(UObject* O, int32 PlayerNum); \
 	static void Execute_OnPlayerLoginStatusChanged(UObject* O, EBPLoginStatus PreviousStatus, EBPLoginStatus NewStatus, FBPUniqueNetId PlayerUniqueNetID); \
 	static void Execute_OnPlayerVoiceStateChanged(UObject* O, FBPUniqueNetId PlayerId, bool bIsTalking); \
-	static void Execute_OnSessionInviteAccepted(UObject* O, FBPUniqueNetId PersonInviting, FBlueprintSessionResult const& SearchResult); \
+	static void Execute_OnSessionInviteAccepted(UObject* O, FBPUniqueNetId PersonInvited, FBlueprintSessionResult const& SearchResult); \
 	static void Execute_OnSessionInviteReceived(UObject* O, FBPUniqueNetId PersonInviting, FBlueprintSessionResult const& SearchResult); \
 	virtual UObject* _getUObject() const { check(0 && "Missing required implementation."); return nullptr; }
 
@@ -120,7 +120,7 @@ public: \
 	static void Execute_OnPlayerLoginChanged(UObject* O, int32 PlayerNum); \
 	static void Execute_OnPlayerLoginStatusChanged(UObject* O, EBPLoginStatus PreviousStatus, EBPLoginStatus NewStatus, FBPUniqueNetId PlayerUniqueNetID); \
 	static void Execute_OnPlayerVoiceStateChanged(UObject* O, FBPUniqueNetId PlayerId, bool bIsTalking); \
-	static void Execute_OnSessionInviteAccepted(UObject* O, FBPUniqueNetId PersonInviting, FBlueprintSessionResult const& SearchResult); \
+	static void Execute_OnSessionInviteAccepted(UObject* O, FBPUniqueNetId PersonInvited, FBlueprintSessionResult const& SearchResult); \
 	static void Execute_OnSessionInviteReceived(UObject* O, FBPUniqueNetId PersonInviting, FBlueprintSessionResult const& SearchResult); \
 	virtual UObject* _getUObject() const { check(0 && "Missing required implementation."); return nullptr; }
 

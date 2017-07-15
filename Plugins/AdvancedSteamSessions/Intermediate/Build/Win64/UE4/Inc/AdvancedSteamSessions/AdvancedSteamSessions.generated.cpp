@@ -18,14 +18,18 @@ void EmptyLinkFunctionForGeneratedCode1AdvancedSteamSessions() {}
 	ADVANCEDSESSIONS_API class UScriptStruct* Z_Construct_UScriptStruct_FBPUniqueNetId();
 	ENGINE_API class UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 	ADVANCEDSESSIONS_API class UEnum* Z_Construct_UEnum_AdvancedSessions_EBlueprintAsyncResultSwitch();
+	ADVANCEDSESSIONS_API class UEnum* Z_Construct_UEnum_AdvancedSessions_EBlueprintResultSwitch();
 	ENGINE_API class UClass* Z_Construct_UClass_UBlueprintFunctionLibrary();
 	COREUOBJECT_API class UClass* Z_Construct_UClass_UObject_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UOnlineBlueprintCallProxyBase();
 
 	ADVANCEDSTEAMSESSIONS_API class UEnum* Z_Construct_UEnum_AdvancedSteamSessions_SteamAvatarSize();
+	ADVANCEDSTEAMSESSIONS_API class UScriptStruct* Z_Construct_UScriptStruct_FBPSteamGroupInfo();
 	ADVANCEDSTEAMSESSIONS_API class UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_CreateSteamIDFromString();
 	ADVANCEDSTEAMSESSIONS_API class UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetFriendSteamLevel();
 	ADVANCEDSTEAMSESSIONS_API class UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamFriendAvatar();
+	ADVANCEDSTEAMSESSIONS_API class UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamFriendGamePlayed();
+	ADVANCEDSTEAMSESSIONS_API class UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamGroups();
 	ADVANCEDSTEAMSESSIONS_API class UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamPersonaName();
 	ADVANCEDSTEAMSESSIONS_API class UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_RequestSteamFriendInfo();
 	ADVANCEDSTEAMSESSIONS_API class UClass* Z_Construct_UClass_UAdvancedSteamFriendsLibrary_NoRegister();
@@ -85,6 +89,64 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_SteamAvatarSize(SteamAva
 		return ReturnEnum;
 	}
 	uint32 Get_Z_Construct_UEnum_AdvancedSteamSessions_SteamAvatarSize_CRC() { return 2535999010U; }
+class UScriptStruct* FBPSteamGroupInfo::StaticStruct()
+{
+	extern ADVANCEDSTEAMSESSIONS_API class UPackage* Z_Construct_UPackage__Script_AdvancedSteamSessions();
+	static class UScriptStruct* Singleton = NULL;
+	if (!Singleton)
+	{
+		extern ADVANCEDSTEAMSESSIONS_API class UScriptStruct* Z_Construct_UScriptStruct_FBPSteamGroupInfo();
+		extern ADVANCEDSTEAMSESSIONS_API uint32 Get_Z_Construct_UScriptStruct_FBPSteamGroupInfo_CRC();
+		Singleton = GetStaticStruct(Z_Construct_UScriptStruct_FBPSteamGroupInfo, Z_Construct_UPackage__Script_AdvancedSteamSessions(), TEXT("BPSteamGroupInfo"), sizeof(FBPSteamGroupInfo), Get_Z_Construct_UScriptStruct_FBPSteamGroupInfo_CRC());
+	}
+	return Singleton;
+}
+static FCompiledInDeferStruct Z_CompiledInDeferStruct_UScriptStruct_FBPSteamGroupInfo(FBPSteamGroupInfo::StaticStruct, TEXT("/Script/AdvancedSteamSessions"), TEXT("BPSteamGroupInfo"), false, nullptr, nullptr);
+static struct FScriptStruct_AdvancedSteamSessions_StaticRegisterNativesFBPSteamGroupInfo
+{
+	FScriptStruct_AdvancedSteamSessions_StaticRegisterNativesFBPSteamGroupInfo()
+	{
+		UScriptStruct::DeferCppStructOps(FName(TEXT("BPSteamGroupInfo")),new UScriptStruct::TCppStructOps<FBPSteamGroupInfo>);
+	}
+} ScriptStruct_AdvancedSteamSessions_StaticRegisterNativesFBPSteamGroupInfo;
+	UScriptStruct* Z_Construct_UScriptStruct_FBPSteamGroupInfo()
+	{
+		UPackage* Outer = Z_Construct_UPackage__Script_AdvancedSteamSessions();
+		extern uint32 Get_Z_Construct_UScriptStruct_FBPSteamGroupInfo_CRC();
+		static UScriptStruct* ReturnStruct = FindExistingStructIfHotReloadOrDynamic(Outer, TEXT("BPSteamGroupInfo"), sizeof(FBPSteamGroupInfo), Get_Z_Construct_UScriptStruct_FBPSteamGroupInfo_CRC(), false);
+		if (!ReturnStruct)
+		{
+			ReturnStruct = new(EC_InternalUseOnlyConstructor, Outer, TEXT("BPSteamGroupInfo"), RF_Public|RF_Transient|RF_MarkAsNative) UScriptStruct(FObjectInitializer(), NULL, new UScriptStruct::TCppStructOps<FBPSteamGroupInfo>, EStructFlags(0x00000001));
+			UProperty* NewProp_numChatting = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("numChatting"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(numChatting, FBPSteamGroupInfo), 0x0010000000000015);
+			UProperty* NewProp_numInGame = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("numInGame"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(numInGame, FBPSteamGroupInfo), 0x0010000000000015);
+			UProperty* NewProp_numOnline = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("numOnline"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(numOnline, FBPSteamGroupInfo), 0x0010000000000015);
+			UProperty* NewProp_GroupTag = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("GroupTag"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(GroupTag, FBPSteamGroupInfo), 0x0010000000000015);
+			UProperty* NewProp_GroupName = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("GroupName"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(GroupName, FBPSteamGroupInfo), 0x0010000000000015);
+			UProperty* NewProp_GroupID = new(EC_InternalUseOnlyConstructor, ReturnStruct, TEXT("GroupID"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(GroupID, FBPSteamGroupInfo), 0x0010000000000015, Z_Construct_UScriptStruct_FBPUniqueNetId());
+			ReturnStruct->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnStruct->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnStruct, TEXT("BlueprintType"), TEXT("true"));
+			MetaData->SetValue(ReturnStruct, TEXT("Category"), TEXT("Online|SteamAPI|SteamGroups"));
+			MetaData->SetValue(ReturnStruct, TEXT("ModuleRelativePath"), TEXT("Classes/AdvancedSteamFriendsLibrary.h"));
+			MetaData->SetValue(NewProp_numChatting, TEXT("Category"), TEXT("Online|SteamAPI|SteamGroups"));
+			MetaData->SetValue(NewProp_numChatting, TEXT("ModuleRelativePath"), TEXT("Classes/AdvancedSteamFriendsLibrary.h"));
+			MetaData->SetValue(NewProp_numInGame, TEXT("Category"), TEXT("Online|SteamAPI|SteamGroups"));
+			MetaData->SetValue(NewProp_numInGame, TEXT("ModuleRelativePath"), TEXT("Classes/AdvancedSteamFriendsLibrary.h"));
+			MetaData->SetValue(NewProp_numOnline, TEXT("Category"), TEXT("Online|SteamAPI|SteamGroups"));
+			MetaData->SetValue(NewProp_numOnline, TEXT("ModuleRelativePath"), TEXT("Classes/AdvancedSteamFriendsLibrary.h"));
+			MetaData->SetValue(NewProp_GroupTag, TEXT("Category"), TEXT("Online|SteamAPI|SteamGroups"));
+			MetaData->SetValue(NewProp_GroupTag, TEXT("ModuleRelativePath"), TEXT("Classes/AdvancedSteamFriendsLibrary.h"));
+			MetaData->SetValue(NewProp_GroupName, TEXT("Category"), TEXT("Online|SteamAPI|SteamGroups"));
+			MetaData->SetValue(NewProp_GroupName, TEXT("ModuleRelativePath"), TEXT("Classes/AdvancedSteamFriendsLibrary.h"));
+			MetaData->SetValue(NewProp_GroupName, TEXT("ToolTip"), TEXT("Uint64 representation"));
+			MetaData->SetValue(NewProp_GroupID, TEXT("Category"), TEXT("Online|SteamAPI|SteamGroups"));
+			MetaData->SetValue(NewProp_GroupID, TEXT("ModuleRelativePath"), TEXT("Classes/AdvancedSteamFriendsLibrary.h"));
+#endif
+		}
+		return ReturnStruct;
+	}
+	uint32 Get_Z_Construct_UScriptStruct_FBPSteamGroupInfo_CRC() { return 3432490905U; }
 	void UAdvancedSteamFriendsLibrary::StaticRegisterNativesUAdvancedSteamFriendsLibrary()
 	{
 		UClass* Class = UAdvancedSteamFriendsLibrary::StaticClass();
@@ -92,10 +154,12 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_SteamAvatarSize(SteamAva
 			{ "CreateSteamIDFromString", (Native)&UAdvancedSteamFriendsLibrary::execCreateSteamIDFromString },
 			{ "GetFriendSteamLevel", (Native)&UAdvancedSteamFriendsLibrary::execGetFriendSteamLevel },
 			{ "GetSteamFriendAvatar", (Native)&UAdvancedSteamFriendsLibrary::execGetSteamFriendAvatar },
+			{ "GetSteamFriendGamePlayed", (Native)&UAdvancedSteamFriendsLibrary::execGetSteamFriendGamePlayed },
+			{ "GetSteamGroups", (Native)&UAdvancedSteamFriendsLibrary::execGetSteamGroups },
 			{ "GetSteamPersonaName", (Native)&UAdvancedSteamFriendsLibrary::execGetSteamPersonaName },
 			{ "RequestSteamFriendInfo", (Native)&UAdvancedSteamFriendsLibrary::execRequestSteamFriendInfo },
 		};
-		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, 5);
+		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, 7);
 	}
 	UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_CreateSteamIDFromString()
 	{
@@ -183,6 +247,61 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_SteamAvatarSize(SteamAva
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamFriendGamePlayed()
+	{
+		struct AdvancedSteamFriendsLibrary_eventGetSteamFriendGamePlayed_Parms
+		{
+			FBPUniqueNetId UniqueNetId;
+			EBlueprintResultSwitch Result;
+			FString GameName;
+			int32 AppID;
+		};
+		UObject* Outer=Z_Construct_UClass_UAdvancedSteamFriendsLibrary();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetSteamFriendGamePlayed"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04422401, 65535, sizeof(AdvancedSteamFriendsLibrary_eventGetSteamFriendGamePlayed_Parms));
+			UProperty* NewProp_AppID = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("AppID"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(AppID, AdvancedSteamFriendsLibrary_eventGetSteamFriendGamePlayed_Parms), 0x0010000000000180);
+			UProperty* NewProp_GameName = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("GameName"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(GameName, AdvancedSteamFriendsLibrary_eventGetSteamFriendGamePlayed_Parms), 0x0010000000000180);
+			UProperty* NewProp_Result = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("Result"), RF_Public|RF_Transient|RF_MarkAsNative) UEnumProperty(CPP_PROPERTY_BASE(Result, AdvancedSteamFriendsLibrary_eventGetSteamFriendGamePlayed_Parms), 0x0010000000000180, Z_Construct_UEnum_AdvancedSessions_EBlueprintResultSwitch());
+			UProperty* NewProp_Result_Underlying = new(EC_InternalUseOnlyConstructor, NewProp_Result, TEXT("UnderlyingType"), RF_Public|RF_Transient|RF_MarkAsNative) UByteProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000);
+			UProperty* NewProp_UniqueNetId = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("UniqueNetId"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(UniqueNetId, AdvancedSteamFriendsLibrary_eventGetSteamFriendGamePlayed_Parms), 0x0010000000000082, Z_Construct_UScriptStruct_FBPUniqueNetId());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Online|AdvancedFriends|SteamAPI"));
+			MetaData->SetValue(ReturnFunction, TEXT("ExpandEnumAsExecs"), TEXT("Result"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Classes/AdvancedSteamFriendsLibrary.h"));
+			MetaData->SetValue(ReturnFunction, TEXT("ToolTip"), TEXT("Gets the current game played by a friend - AppID is int32 even though steam ids are uint32, can't be helped in blueprint currently\n      *  The game name is retrieved from steamSDK AppList which isn't available to all game IDs without request, can use the AppID with the\n      *  WebAPI GetAppList request as an alternative."));
+			MetaData->SetValue(NewProp_UniqueNetId, TEXT("NativeConst"), TEXT(""));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamGroups()
+	{
+		struct AdvancedSteamFriendsLibrary_eventGetSteamGroups_Parms
+		{
+			TArray<FBPSteamGroupInfo> SteamGroups;
+		};
+		UObject* Outer=Z_Construct_UClass_UAdvancedSteamFriendsLibrary();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetSteamGroups"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04422401, 65535, sizeof(AdvancedSteamFriendsLibrary_eventGetSteamGroups_Parms));
+			UProperty* NewProp_SteamGroups = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("SteamGroups"), RF_Public|RF_Transient|RF_MarkAsNative) UArrayProperty(CPP_PROPERTY_BASE(SteamGroups, AdvancedSteamFriendsLibrary_eventGetSteamGroups_Parms), 0x0010000000000180);
+			UProperty* NewProp_SteamGroups_Inner = new(EC_InternalUseOnlyConstructor, NewProp_SteamGroups, TEXT("SteamGroups"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000, Z_Construct_UScriptStruct_FBPSteamGroupInfo());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Online|SteamAPI|SteamGroups"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Classes/AdvancedSteamFriendsLibrary.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamPersonaName()
 	{
 		struct AdvancedSteamFriendsLibrary_eventGetSteamPersonaName_Parms
@@ -260,12 +379,16 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_SteamAvatarSize(SteamAva
 				OuterClass->LinkChild(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_CreateSteamIDFromString());
 				OuterClass->LinkChild(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetFriendSteamLevel());
 				OuterClass->LinkChild(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamFriendAvatar());
+				OuterClass->LinkChild(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamFriendGamePlayed());
+				OuterClass->LinkChild(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamGroups());
 				OuterClass->LinkChild(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamPersonaName());
 				OuterClass->LinkChild(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_RequestSteamFriendInfo());
 
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_CreateSteamIDFromString(), "CreateSteamIDFromString"); // 3274121421
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetFriendSteamLevel(), "GetFriendSteamLevel"); // 2369316772
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamFriendAvatar(), "GetSteamFriendAvatar"); // 2356272692
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamFriendGamePlayed(), "GetSteamFriendGamePlayed"); // 535419178
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamGroups(), "GetSteamGroups"); // 2001907145
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_GetSteamPersonaName(), "GetSteamPersonaName"); // 722806983
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedSteamFriendsLibrary_RequestSteamFriendInfo(), "RequestSteamFriendInfo"); // 3711958295
 				static TCppClassTypeInfo<TCppClassTypeTraits<UAdvancedSteamFriendsLibrary> > StaticCppClassTypeInfo;
@@ -281,7 +404,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_SteamAvatarSize(SteamAva
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UAdvancedSteamFriendsLibrary, 3824844171);
+	IMPLEMENT_CLASS(UAdvancedSteamFriendsLibrary, 4082138912);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UAdvancedSteamFriendsLibrary(Z_Construct_UClass_UAdvancedSteamFriendsLibrary, &UAdvancedSteamFriendsLibrary::StaticClass, TEXT("/Script/AdvancedSteamSessions"), TEXT("UAdvancedSteamFriendsLibrary"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UAdvancedSteamFriendsLibrary);
 static UEnum* FBPWorkshopFileType_StaticEnum()
@@ -955,7 +1078,6 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		{
 			UObject* WorldContextObject;
 			FBPSteamWorkshopID WorkShopID;
-			int32 NumSecondsBeforeTimeout;
 			USteamWSRequestUGCDetailsCallbackProxy* ReturnValue;
 		};
 		UObject* Outer=Z_Construct_UClass_USteamWSRequestUGCDetailsCallbackProxy();
@@ -964,7 +1086,6 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		{
 			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetWorkshopItemDetails"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x04022401, 65535, sizeof(SteamWSRequestUGCDetailsCallbackProxy_eventGetWorkshopItemDetails_Parms));
 			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(ReturnValue, SteamWSRequestUGCDetailsCallbackProxy_eventGetWorkshopItemDetails_Parms), 0x0010000000000580, Z_Construct_UClass_USteamWSRequestUGCDetailsCallbackProxy_NoRegister());
-			UProperty* NewProp_NumSecondsBeforeTimeout = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("NumSecondsBeforeTimeout"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(NumSecondsBeforeTimeout, SteamWSRequestUGCDetailsCallbackProxy_eventGetWorkshopItemDetails_Parms), 0x0010000000000080);
 			UProperty* NewProp_WorkShopID = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("WorkShopID"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(WorkShopID, SteamWSRequestUGCDetailsCallbackProxy_eventGetWorkshopItemDetails_Parms), 0x0010000000000080, Z_Construct_UScriptStruct_FBPSteamWorkshopID());
 			UProperty* NewProp_WorldContextObject = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("WorldContextObject"), RF_Public|RF_Transient|RF_MarkAsNative) UObjectProperty(CPP_PROPERTY_BASE(WorldContextObject, SteamWSRequestUGCDetailsCallbackProxy_eventGetWorkshopItemDetails_Parms), 0x0010000000000080, Z_Construct_UClass_UObject_NoRegister());
 			ReturnFunction->Bind();
@@ -1003,7 +1124,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_OnFailure = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("OnFailure"), RF_Public|RF_Transient|RF_MarkAsNative) UMulticastDelegateProperty(CPP_PROPERTY_BASE(OnFailure, USteamWSRequestUGCDetailsCallbackProxy), 0x0010000010080000, Z_Construct_UDelegateFunction_AdvancedSteamSessions_BlueprintWorkshopDetailsDelegate__DelegateSignature());
 				UProperty* NewProp_OnSuccess = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("OnSuccess"), RF_Public|RF_Transient|RF_MarkAsNative) UMulticastDelegateProperty(CPP_PROPERTY_BASE(OnSuccess, USteamWSRequestUGCDetailsCallbackProxy), 0x0010000010080000, Z_Construct_UDelegateFunction_AdvancedSteamSessions_BlueprintWorkshopDetailsDelegate__DelegateSignature());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USteamWSRequestUGCDetailsCallbackProxy_GetWorkshopItemDetails(), "GetWorkshopItemDetails"); // 3031497421
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_USteamWSRequestUGCDetailsCallbackProxy_GetWorkshopItemDetails(), "GetWorkshopItemDetails"); // 2581502486
 				static TCppClassTypeInfo<TCppClassTypeTraits<USteamWSRequestUGCDetailsCallbackProxy> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
 				OuterClass->StaticLink();
@@ -1021,7 +1142,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USteamWSRequestUGCDetailsCallbackProxy, 1944480378);
+	IMPLEMENT_CLASS(USteamWSRequestUGCDetailsCallbackProxy, 2535596199);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_USteamWSRequestUGCDetailsCallbackProxy(Z_Construct_UClass_USteamWSRequestUGCDetailsCallbackProxy, &USteamWSRequestUGCDetailsCallbackProxy::StaticClass, TEXT("/Script/AdvancedSteamSessions"), TEXT("USteamWSRequestUGCDetailsCallbackProxy"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(USteamWSRequestUGCDetailsCallbackProxy);
 	UPackage* Z_Construct_UPackage__Script_AdvancedSteamSessions()
@@ -1032,8 +1153,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/AdvancedSteamSessions")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xDFA6688C;
-			Guid.B = 0x5C52B8EE;
+			Guid.A = 0x59799A00;
+			Guid.B = 0x94E5228D;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

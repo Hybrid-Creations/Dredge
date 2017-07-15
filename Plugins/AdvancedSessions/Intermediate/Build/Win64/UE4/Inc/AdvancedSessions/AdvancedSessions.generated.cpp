@@ -1192,7 +1192,7 @@ static struct FScriptStruct_AdvancedSessions_StaticRegisterNativesFBPUserOnlineA
 	{
 		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_OnPlayerVoiceStateChanged instead.");
 	}
-	void IAdvancedFriendsInterface::OnSessionInviteAccepted(FBPUniqueNetId PersonInviting, FBlueprintSessionResult const& SearchResult)
+	void IAdvancedFriendsInterface::OnSessionInviteAccepted(FBPUniqueNetId PersonInvited, FBlueprintSessionResult const& SearchResult)
 	{
 		check(0 && "Do not directly call Event functions in Interfaces. Call Execute_OnSessionInviteAccepted instead.");
 	}
@@ -1274,7 +1274,7 @@ static struct FScriptStruct_AdvancedSessions_StaticRegisterNativesFBPUserOnlineA
 		{
 			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnSessionInviteAccepted"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x08420800, 65535, sizeof(AdvancedFriendsInterface_eventOnSessionInviteAccepted_Parms));
 			UProperty* NewProp_SearchResult = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("SearchResult"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(SearchResult, AdvancedFriendsInterface_eventOnSessionInviteAccepted_Parms), 0x0010000008000182, Z_Construct_UScriptStruct_FBlueprintSessionResult());
-			UProperty* NewProp_PersonInviting = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("PersonInviting"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(PersonInviting, AdvancedFriendsInterface_eventOnSessionInviteAccepted_Parms), 0x0010000000000080, Z_Construct_UScriptStruct_FBPUniqueNetId());
+			UProperty* NewProp_PersonInvited = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("PersonInvited"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(PersonInvited, AdvancedFriendsInterface_eventOnSessionInviteAccepted_Parms), 0x0010000000000080, Z_Construct_UScriptStruct_FBPUniqueNetId());
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
@@ -1334,7 +1334,7 @@ static struct FScriptStruct_AdvancedSessions_StaticRegisterNativesFBPUserOnlineA
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsInterface_OnPlayerLoginChanged(), "OnPlayerLoginChanged"); // 3996749168
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsInterface_OnPlayerLoginStatusChanged(), "OnPlayerLoginStatusChanged"); // 1684506919
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsInterface_OnPlayerVoiceStateChanged(), "OnPlayerVoiceStateChanged"); // 1993925933
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsInterface_OnSessionInviteAccepted(), "OnSessionInviteAccepted"); // 4251971647
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsInterface_OnSessionInviteAccepted(), "OnSessionInviteAccepted"); // 1664407539
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsInterface_OnSessionInviteReceived(), "OnSessionInviteReceived"); // 3378217971
 				static TCppClassTypeInfo<TCppClassTypeTraits<IAdvancedFriendsInterface> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
@@ -1348,7 +1348,7 @@ static struct FScriptStruct_AdvancedSessions_StaticRegisterNativesFBPUserOnlineA
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UAdvancedFriendsInterface, 447557153);
+	IMPLEMENT_CLASS(UAdvancedFriendsInterface, 1677893112);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UAdvancedFriendsInterface(Z_Construct_UClass_UAdvancedFriendsInterface, &UAdvancedFriendsInterface::StaticClass, TEXT("/Script/AdvancedSessions"), TEXT("UAdvancedFriendsInterface"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UAdvancedFriendsInterface);
 	static FName NAME_UAdvancedFriendsInterface_OnPlayerLoginChanged = FName(TEXT("OnPlayerLoginChanged"));
@@ -1394,7 +1394,7 @@ static struct FScriptStruct_AdvancedSessions_StaticRegisterNativesFBPUserOnlineA
 		}
 	}
 	static FName NAME_UAdvancedFriendsInterface_OnSessionInviteAccepted = FName(TEXT("OnSessionInviteAccepted"));
-	void IAdvancedFriendsInterface::Execute_OnSessionInviteAccepted(UObject* O, FBPUniqueNetId PersonInviting, FBlueprintSessionResult const& SearchResult)
+	void IAdvancedFriendsInterface::Execute_OnSessionInviteAccepted(UObject* O, FBPUniqueNetId PersonInvited, FBlueprintSessionResult const& SearchResult)
 	{
 		check(O != NULL);
 		check(O->GetClass()->ImplementsInterface(UAdvancedFriendsInterface::StaticClass()));
@@ -1402,7 +1402,7 @@ static struct FScriptStruct_AdvancedSessions_StaticRegisterNativesFBPUserOnlineA
 		UFunction* const Func = O->FindFunction(NAME_UAdvancedFriendsInterface_OnSessionInviteAccepted);
 		if (Func)
 		{
-			Parms.PersonInviting=PersonInviting;
+			Parms.PersonInvited=PersonInvited;
 			Parms.SearchResult=SearchResult;
 			O->ProcessEvent(Func, &Parms);
 		}
@@ -1447,11 +1447,11 @@ static struct FScriptStruct_AdvancedSessions_StaticRegisterNativesFBPUserOnlineA
 		ProcessEvent(FindFunctionChecked(NAME_UAdvancedFriendsGameInstance_OnPlayerTalkingStateChanged),&Parms);
 	}
 	static FName NAME_UAdvancedFriendsGameInstance_OnSessionInviteAccepted = FName(TEXT("OnSessionInviteAccepted"));
-	void UAdvancedFriendsGameInstance::OnSessionInviteAccepted(int32 LocalPlayerNum, FBPUniqueNetId PersonInviting, FBlueprintSessionResult const& SessionToJoin)
+	void UAdvancedFriendsGameInstance::OnSessionInviteAccepted(int32 LocalPlayerNum, FBPUniqueNetId PersonInvited, FBlueprintSessionResult const& SessionToJoin)
 	{
 		AdvancedFriendsGameInstance_eventOnSessionInviteAccepted_Parms Parms;
 		Parms.LocalPlayerNum=LocalPlayerNum;
-		Parms.PersonInviting=PersonInviting;
+		Parms.PersonInvited=PersonInvited;
 		Parms.SessionToJoin=SessionToJoin;
 		ProcessEvent(FindFunctionChecked(NAME_UAdvancedFriendsGameInstance_OnSessionInviteAccepted),&Parms);
 	}
@@ -1542,7 +1542,7 @@ static struct FScriptStruct_AdvancedSessions_StaticRegisterNativesFBPUserOnlineA
 		{
 			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnSessionInviteAccepted"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), NULL, 0x08420800, 65535, sizeof(AdvancedFriendsGameInstance_eventOnSessionInviteAccepted_Parms));
 			UProperty* NewProp_SessionToJoin = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("SessionToJoin"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(SessionToJoin, AdvancedFriendsGameInstance_eventOnSessionInviteAccepted_Parms), 0x0010000008000182, Z_Construct_UScriptStruct_FBlueprintSessionResult());
-			UProperty* NewProp_PersonInviting = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("PersonInviting"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(PersonInviting, AdvancedFriendsGameInstance_eventOnSessionInviteAccepted_Parms), 0x0010000000000080, Z_Construct_UScriptStruct_FBPUniqueNetId());
+			UProperty* NewProp_PersonInvited = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("PersonInvited"), RF_Public|RF_Transient|RF_MarkAsNative) UStructProperty(CPP_PROPERTY_BASE(PersonInvited, AdvancedFriendsGameInstance_eventOnSessionInviteAccepted_Parms), 0x0010000000000080, Z_Construct_UScriptStruct_FBPUniqueNetId());
 			UProperty* NewProp_LocalPlayerNum = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("LocalPlayerNum"), RF_Public|RF_Transient|RF_MarkAsNative) UIntProperty(CPP_PROPERTY_BASE(LocalPlayerNum, AdvancedFriendsGameInstance_eventOnSessionInviteAccepted_Parms), 0x0010000000000080);
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
@@ -1616,7 +1616,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsGameInstance_OnPlayerLoginChanged(), "OnPlayerLoginChanged"); // 600046769
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsGameInstance_OnPlayerLoginStatusChanged(), "OnPlayerLoginStatusChanged"); // 852845366
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsGameInstance_OnPlayerTalkingStateChanged(), "OnPlayerTalkingStateChanged"); // 2208135609
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsGameInstance_OnSessionInviteAccepted(), "OnSessionInviteAccepted"); // 4166569514
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsGameInstance_OnSessionInviteAccepted(), "OnSessionInviteAccepted"); // 1820859802
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_UAdvancedFriendsGameInstance_OnSessionInviteReceived(), "OnSessionInviteReceived"); // 4211518956
 				static TCppClassTypeInfo<TCppClassTypeTraits<UAdvancedFriendsGameInstance> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
@@ -1640,7 +1640,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UAdvancedFriendsGameInstance, 1375917654);
+	IMPLEMENT_CLASS(UAdvancedFriendsGameInstance, 140227449);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UAdvancedFriendsGameInstance(Z_Construct_UClass_UAdvancedFriendsGameInstance, &UAdvancedFriendsGameInstance::StaticClass, TEXT("/Script/AdvancedSessions"), TEXT("UAdvancedFriendsGameInstance"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UAdvancedFriendsGameInstance);
 	void UAdvancedFriendsLibrary::StaticRegisterNativesUAdvancedFriendsLibrary()
@@ -4993,7 +4993,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/AdvancedSessions")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x25F28F82;
+			Guid.A = 0x1DDB9B61;
 			Guid.B = 0x729DCC55;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

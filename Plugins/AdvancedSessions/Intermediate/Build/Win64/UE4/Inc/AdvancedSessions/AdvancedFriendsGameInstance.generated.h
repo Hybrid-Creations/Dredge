@@ -38,7 +38,7 @@ struct FBlueprintSessionResult;
 	struct AdvancedFriendsGameInstance_eventOnSessionInviteAccepted_Parms \
 	{ \
 		int32 LocalPlayerNum; \
-		FBPUniqueNetId PersonInviting; \
+		FBPUniqueNetId PersonInvited; \
 		FBlueprintSessionResult SessionToJoin; \
 	}; \
 	struct AdvancedFriendsGameInstance_eventOnSessionInviteReceived_Parms \
