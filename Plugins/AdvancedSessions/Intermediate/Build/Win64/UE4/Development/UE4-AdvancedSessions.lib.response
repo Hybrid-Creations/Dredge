@@ -1,8 +1,0 @@
-/NOLOGO
-/errorReport:prompt
-/MACHINE:x64
-/SUBSYSTEM:WINDOWS
-"Z:\Xyntix\Documents\GitHub\Dredge\Plugins\AdvancedSessions\Intermediate\Build\Win64\UE4\Development\AdvancedSessions\Module.AdvancedSessions.cpp.obj"
-"Z:\Xyntix\Documents\GitHub\Dredge\Plugins\AdvancedSessions\Intermediate\Build\Win64\UE4\Development\AdvancedSessions\AdvancedSessions.generated.cpp.obj"
-"Z:\Xyntix\Documents\GitHub\Dredge\Intermediate\Build\Win64\UE4\Development\AdvancedSessions\PCLaunch.rc.res"
-/OUT:"Z:\Xyntix\Documents\GitHub\Dredge\Plugins\AdvancedSessions\Binaries\Win64\UE4-AdvancedSessions.lib"
