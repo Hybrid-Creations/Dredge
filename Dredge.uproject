@@ -27,6 +27,10 @@
 		{
 			"Name": "OculusInput",
 			"Enabled": false
+		},
+		{
+			"Name": "GameSettingsManager",
+			"Enabled": true
 		}
 	]
 }

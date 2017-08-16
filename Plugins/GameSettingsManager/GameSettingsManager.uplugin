@@ -1,0 +1,18 @@
+{
+	"FileVersion" : 3,
+	"Version" : 1.2,
+	"VersionName" : "1.2",
+	"FriendlyName" : "Game Settings Manager",
+	"Description" : "This plugin is built to help manage game settings (ex. Resolution, Render Scale, Audio Volumes...)",
+	"Category" : "Game Settings",
+	"CreatedBy" : "Tristan Burger",
+	"CreatedByURL" : "http://tristanburger.weebly.com/",
+	"DocsURL" : "http://tristanburger.weebly.com/game-settings-manager.html",
+	"MarketplaceURL" : "",
+	"SupportURL" : "",
+	"EngineVersion" : "4.17.0",
+	"CanContainContent" : true,
+	"IsBetaVersion" : true,
+	"Installed" : true,
+	"RequiresBuildPlatform" : false
+}
