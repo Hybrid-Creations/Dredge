@@ -31,6 +31,10 @@
 		{
 			"Name": "GameSettingsManager",
 			"Enabled": true
+		},
+		{
+			"Name": "GameAudioManager",
+			"Enabled": true
 		}
 	]
 }

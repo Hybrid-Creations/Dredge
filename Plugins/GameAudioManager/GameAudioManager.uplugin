@@ -1,0 +1,24 @@
+{
+	"FileVersion" : 3,
+	"Version" : 1,
+	"VersionName" : "1.2",
+	"FriendlyName" : "Game Audio Manager",
+	"Description" : "Helps manage playing of audio, and audio levels.",
+	"Category" : "Audio",
+	"CreatedBy" : "Tristan Burger",
+	"CreatedByURL" : "http://tristanburger.weebly.com/",
+	"DocsURL" : "http://tristanburger.weebly.com/game-settings-manager.html",
+	"MarketplaceURL" : "",
+	"SupportURL" : "",
+	"EngineVersion" : "4.17.0",
+	"CanContainContent" : true,
+	"IsBetaVersion" : true,
+	"Installed" : true,
+	"RequiresBuildPlatform" : false,
+		"Plugins": [
+		{
+			"Name": "GameSettingsManager",
+			"Enabled": true
+		}
+	]
+}
