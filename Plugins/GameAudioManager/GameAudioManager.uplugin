@@ -1,6 +1,6 @@
 {
 	"FileVersion" : 3,
-	"Version" : 1.22,
+	"Version" : 1,
 	"VersionName" : "1.22",
 	"FriendlyName" : "Game Audio Manager",
 	"Description" : "Helps manage playing of audio, and audio levels.",
@@ -14,12 +14,5 @@
 	"CanContainContent" : true,
 	"IsBetaVersion" : true,
 	"Installed" : true,
-	"RequiresBuildPlatform" : false,
-			"Plugins": [
-		{
-			"Name": "GameSettingsManager",
-			"Enabled": true
-		}
-	]
-	
+	"RequiresBuildPlatform" : false
 }
