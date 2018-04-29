@@ -1,8 +1,7 @@
 {
-	"Changelist" : 3573198,
-	"BuildId" : "a87d5014-aacc-4b22-afd5-865cf459e7fc",
-	"Modules" : 
+	"BuildId": "3944462",
+	"Modules": 
 	{
-		"AdvancedSteamSessions" : "UE4Editor-AdvancedSteamSessions-Win64-DebugGame.dll"
+		"AdvancedSteamSessions": "UE4Editor-AdvancedSteamSessions-Win64-DebugGame.dll"
 	}
 }
