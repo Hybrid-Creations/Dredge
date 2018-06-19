@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.55",
+	"VersionName": "1.75",
 	"FriendlyName": "Game Settings Manager",
 	"Description": "This plugin is built to help manage game settings (ex. Resolution, Render Scale, Audio Volumes...)",
 	"Category": "Game Settings",
