@@ -35,6 +35,10 @@
 		{
 			"Name": "GameAudioManager",
 			"Enabled": true
+		},
+		{
+			"Name": "SaveGameHelper",
+			"Enabled": true
 		}
 	]
 }
