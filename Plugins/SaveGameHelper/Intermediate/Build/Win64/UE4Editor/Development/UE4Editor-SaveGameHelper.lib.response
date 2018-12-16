@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-SaveGameHelper.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"Z:\Projectz\Unreal\UE_4.19\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.obj"
+"Z:\Xyntix\Documents\GitHub\MyPluginsC\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Development\SaveGameHelper\Module.SaveGameHelper.cpp.obj"
+"Z:\Xyntix\Documents\GitHub\MyPluginsC\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Development\SaveGameHelper\Module.SaveGameHelper.gen.cpp.obj"
+"Z:\Projectz\Unreal\UE_4.19\Engine\Intermediate\Build\Win64\UE4Editor\Development\SaveGameHelper\PCLaunch.rc.res"
+"Z:\Projectz\Unreal\UE_4.19\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
+/OUT:"Z:\Xyntix\Documents\GitHub\MyPluginsC\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-SaveGameHelper.lib"

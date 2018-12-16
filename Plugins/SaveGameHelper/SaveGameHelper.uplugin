@@ -10,10 +10,9 @@
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "",
-	"EngineVersion": "4.19.0",
 	"CanContainContent": true,
 	"IsBetaVersion": true,
-	"Installed": true,
+	"Installed": false,
 	"Modules": [
 		{
 			"Name": "SaveGameHelper",
