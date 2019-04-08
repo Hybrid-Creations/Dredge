@@ -1,0 +1,7 @@
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Development\SaveGameHelper\Definitions.SaveGameHelper.h
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Inc\SaveGameHelper\SaveGameHelper.init.gen.cpp
+Z:\Game_Engines\Unreal_Engine\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+Z:\Game_Engines\Unreal_Engine\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Inc\SaveGameHelper\SaveGameHelperBPLibrary.gen.cpp
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Source\SaveGameHelper/Public/SaveGameHelperBPLibrary.h
+z:\projectz\unreal engine\projects\dredge\plugins\savegamehelper\intermediate\build\win64\ue4editor\inc\savegamehelper\SaveGameHelperBPLibrary.generated.h

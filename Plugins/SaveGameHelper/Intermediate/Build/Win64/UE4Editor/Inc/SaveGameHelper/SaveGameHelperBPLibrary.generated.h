@@ -1,11 +1,11 @@
-// Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-#include "ObjectMacros.h"
-#include "ScriptMacros.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #ifdef SAVEGAMEHELPER_SaveGameHelperBPLibrary_generated_h
@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SAVEGAMEHELPER_SaveGameHelperBPLibrary_generated_h
 
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_RPC_WRAPPERS \
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGetAllSaveGameNames) \
 	{ \
@@ -24,7 +24,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetAllSaveGameNames) \
 	{ \
@@ -35,27 +35,25 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_INCLASS_NO_PURE_DECLS \
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUSaveGameHelperBPLibrary(); \
-	friend SAVEGAMEHELPER_API class UClass* Z_Construct_UClass_USaveGameHelperBPLibrary(); \
+	friend struct Z_Construct_UClass_USaveGameHelperBPLibrary_Statics; \
 public: \
-	DECLARE_CLASS(USaveGameHelperBPLibrary, UBlueprintFunctionLibrary, COMPILED_IN_FLAGS(0), 0, TEXT("/Script/SaveGameHelper"), NO_API) \
-	DECLARE_SERIALIZER(USaveGameHelperBPLibrary) \
-	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
+	DECLARE_CLASS(USaveGameHelperBPLibrary, UBlueprintFunctionLibrary, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SaveGameHelper"), NO_API) \
+	DECLARE_SERIALIZER(USaveGameHelperBPLibrary)
 
 
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_INCLASS \
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_INCLASS \
 private: \
 	static void StaticRegisterNativesUSaveGameHelperBPLibrary(); \
-	friend SAVEGAMEHELPER_API class UClass* Z_Construct_UClass_USaveGameHelperBPLibrary(); \
+	friend struct Z_Construct_UClass_USaveGameHelperBPLibrary_Statics; \
 public: \
-	DECLARE_CLASS(USaveGameHelperBPLibrary, UBlueprintFunctionLibrary, COMPILED_IN_FLAGS(0), 0, TEXT("/Script/SaveGameHelper"), NO_API) \
-	DECLARE_SERIALIZER(USaveGameHelperBPLibrary) \
-	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
+	DECLARE_CLASS(USaveGameHelperBPLibrary, UBlueprintFunctionLibrary, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SaveGameHelper"), NO_API) \
+	DECLARE_SERIALIZER(USaveGameHelperBPLibrary)
 
 
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_STANDARD_CONSTRUCTORS \
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USaveGameHelperBPLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USaveGameHelperBPLibrary) \
@@ -68,7 +66,7 @@ private: \
 public:
 
 
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_ENHANCED_CONSTRUCTORS \
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USaveGameHelperBPLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -81,32 +79,34 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USaveGameHelperBPLibrary); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USaveGameHelperBPLibrary)
 
 
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_PRIVATE_PROPERTY_OFFSET
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_25_PROLOG
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_GENERATED_BODY_LEGACY \
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_PRIVATE_PROPERTY_OFFSET
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_25_PROLOG
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_PRIVATE_PROPERTY_OFFSET \
-	MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_RPC_WRAPPERS \
-	MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_INCLASS \
-	MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_STANDARD_CONSTRUCTORS \
+	Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_PRIVATE_PROPERTY_OFFSET \
+	Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_RPC_WRAPPERS \
+	Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_INCLASS \
+	Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_GENERATED_BODY \
+#define Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_PRIVATE_PROPERTY_OFFSET \
-	MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
-	MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_INCLASS_NO_PURE_DECLS \
-	MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_ENHANCED_CONSTRUCTORS \
+	Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_PRIVATE_PROPERTY_OFFSET \
+	Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
+	Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_INCLASS_NO_PURE_DECLS \
+	Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h_28_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
+template<> SAVEGAMEHELPER_API UClass* StaticClass<class USaveGameHelperBPLibrary>();
+
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID MyPluginsC_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h
+#define CURRENT_FILE_ID Dredge_Plugins_SaveGameHelper_Source_SaveGameHelper_Public_SaveGameHelperBPLibrary_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

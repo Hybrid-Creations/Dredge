@@ -1,0 +1,9 @@
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Development\SaveGameHelper\Definitions.SaveGameHelper.h
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Source\SaveGameHelper\Private\SaveGameHelper.cpp
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Source\SaveGameHelper\Public\SaveGameHelper.h
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Source\SaveGameHelper\Private\SaveGameHelperBPLibrary.cpp
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Source\SaveGameHelper\Public\SaveGameHelperBPLibrary.h
+Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Inc\SaveGameHelper\SaveGameHelperBPLibrary.generated.h
+Z:\Game_Engines\Unreal_Engine\UE_4.22\Engine\Source\Runtime\Core\Public\HAL\PlatformFile.h
+Z:\Game_Engines\Unreal_Engine\UE_4.22\Engine\Source\Runtime\Core\Public\Windows/WindowsPlatformFile.h
+Z:\Game_Engines\Unreal_Engine\UE_4.22\Engine\Source\Runtime\Core\Public\HAL\PlatformFilemanager.h

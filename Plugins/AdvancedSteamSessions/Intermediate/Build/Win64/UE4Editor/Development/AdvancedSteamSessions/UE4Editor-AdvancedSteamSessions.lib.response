@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-AdvancedSteamSessions.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.obj"
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\UE4Editor\Development\AdvancedSteamSessions\AdvancedSteamFriendsLibrary.cpp.obj"
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\UE4Editor\Development\AdvancedSteamSessions\SteamRequestGroupOfficersCallbackProxy.cpp.obj"
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\UE4Editor\Development\AdvancedSteamSessions\SteamWSRequestUGCDetailsCallbackProxy.cpp.obj"
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\UE4Editor\Development\AdvancedSteamSessions\Module.AdvancedSteamSessions.cpp.obj"
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\UE4Editor\Development\AdvancedSteamSessions\Module.AdvancedSteamSessions.gen.cpp.obj"
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\UE4Editor\Development\AdvancedSteamSessions\Default.rc2.res"
+/OUT:"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\UE4Editor\Development\AdvancedSteamSessions\UE4Editor-AdvancedSteamSessions.lib"
+/INCLUDE:IMPLEMENT_MODULE_AdvancedSteamSessions

@@ -2,45 +2,6 @@
 #include "AdvancedSteamFriendsLibrary.h"
 #include "OnlineSubSystemHeader.h"
 
-// This is taken directly from UE4 - OnlineSubsystemSteamPrivatePCH.h as a fix for the array_count macro
-
-// @todo Steam: Steam headers trigger secure-C-runtime warnings in Visual C++. Rather than mess with _CRT_SECURE_NO_WARNINGS, we'll just
-//	disable the warnings locally. Remove when this is fixed in the SDK
-#ifdef _MSC_VER
-#pragma warning(push)
-#pragma warning(disable:4996)
-// #TODO check back on this at some point
-#pragma warning(disable:4265) // SteamAPI CCallback< specifically, this warning is off by default but 4.17 turned it on....
-#endif
-
-#if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
-
-#pragma push_macro("ARRAY_COUNT")
-#undef ARRAY_COUNT
-
-#if USING_CODE_ANALYSIS
-MSVC_PRAGMA(warning(push))
-MSVC_PRAGMA(warning(disable : ALL_CODE_ANALYSIS_WARNINGS))
-#endif	// USING_CODE_ANALYSIS
-
-#include <steam/steam_api.h>
-
-#if USING_CODE_ANALYSIS
-MSVC_PRAGMA(warning(pop))
-#endif	// USING_CODE_ANALYSIS
-
-#include <steam/isteamapps.h>
-#include <steam/isteamapplist.h>
-#include <OnlineSubsystemSteamTypes.h>
-#pragma pop_macro("ARRAY_COUNT")
-
-#endif
-
-// @todo Steam: See above
-#ifdef _MSC_VER
-#pragma warning(pop)
-#endif
-
 //General Log
 DEFINE_LOG_CATEGORY(AdvancedSteamFriendsLog);
 
@@ -50,7 +11,7 @@ DEFINE_LOG_CATEGORY(AdvancedSteamFriendsLog);
 {
 
 #if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
-	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid())
+	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid() || UniqueNetId.UniqueNetId->GetType() != STEAM_SUBSYSTEM)
 	{
 		UE_LOG(AdvancedSteamFriendsLog, Warning, TEXT("IsAFriend Had a bad UniqueNetId!"));
 		return 0;
@@ -97,6 +58,7 @@ DEFINE_LOG_CATEGORY(AdvancedSteamFriendsLog);
 
 void UAdvancedSteamFriendsLibrary::GetSteamGroups(TArray<FBPSteamGroupInfo> & SteamGroups)
 {
+	
 #if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
 
 	if (SteamAPI_Init())
@@ -112,7 +74,7 @@ void UAdvancedSteamFriendsLibrary::GetSteamGroups(TArray<FBPSteamGroupInfo> & St
 
 			FBPSteamGroupInfo GroupInfo;
 
-			TSharedPtr<const FUniqueNetId> ValueID(new const FUniqueNetIdSteam(SteamGroupID));
+			TSharedPtr<const FUniqueNetId> ValueID(new const FUniqueNetIdSteam2(SteamGroupID));
 			GroupInfo.GroupID.SetUniqueNetId(ValueID);
 			SteamFriends()->GetClanActivityCounts(SteamGroupID, &GroupInfo.numOnline, &GroupInfo.numInGame, &GroupInfo.numChatting);
 			GroupInfo.GroupName = FString(UTF8_TO_TCHAR(SteamFriends()->GetClanName(SteamGroupID)));
@@ -122,13 +84,14 @@ void UAdvancedSteamFriendsLibrary::GetSteamGroups(TArray<FBPSteamGroupInfo> & St
 		}
 	}
 #endif
+
 }
 
-void UAdvancedSteamFriendsLibrary::GetSteamFriendGamePlayed(const FBPUniqueNetId UniqueNetId, EBlueprintResultSwitch &Result, FString & GameName, int32 & AppID)
+void UAdvancedSteamFriendsLibrary::GetSteamFriendGamePlayed(const FBPUniqueNetId UniqueNetId, EBlueprintResultSwitch &Result/*, FString & GameName*/, int32 & AppID)
 {
 
 #if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
-	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid())
+	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid() || UniqueNetId.UniqueNetId->GetType() != STEAM_SUBSYSTEM)
 	{
 		UE_LOG(AdvancedSteamFriendsLog, Warning, TEXT("GetSteamFriendGamePlayed Had a bad UniqueNetId!"));
 		Result = EBlueprintResultSwitch::OnFailure;
@@ -146,13 +109,15 @@ void UAdvancedSteamFriendsLibrary::GetSteamFriendGamePlayed(const FBPUniqueNetId
 		{
 			AppID = GameInfo.m_gameID.AppID();
 
-			char NameBuffer[512];
+			// Forgot this test and left it in, it is incorrect, you would need restricted access
+			// And it would only find games in the local library anyway
+			/*char NameBuffer[512];
 			int Len = SteamAppList()->GetAppName(GameInfo.m_gameID.AppID(), NameBuffer, 512);
 
 			if (Len != -1) // Invalid
 			{
 				GameName = FString(UTF8_TO_TCHAR(NameBuffer));
-			}
+			}*/
 
 			Result = EBlueprintResultSwitch::OnSuccess;
 			return;
@@ -168,7 +133,7 @@ int32 UAdvancedSteamFriendsLibrary::GetFriendSteamLevel(const FBPUniqueNetId Uni
 {
 
 #if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
-	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid())
+	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid() || UniqueNetId.UniqueNetId->GetType() != STEAM_SUBSYSTEM)
 	{
 		UE_LOG(AdvancedSteamFriendsLog, Warning, TEXT("IsAFriend Had a bad UniqueNetId!"));
 		return 0;
@@ -189,7 +154,7 @@ FString UAdvancedSteamFriendsLibrary::GetSteamPersonaName(const FBPUniqueNetId U
 {
 
 #if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
-	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid())
+	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid() || UniqueNetId.UniqueNetId->GetType() != STEAM_SUBSYSTEM)
 	{
 		UE_LOG(AdvancedSteamFriendsLog, Warning, TEXT("GetSteamPersonaName Had a bad UniqueNetId!"));
 		return FString(TEXT(""));
@@ -209,7 +174,7 @@ FString UAdvancedSteamFriendsLibrary::GetSteamPersonaName(const FBPUniqueNetId U
 FBPUniqueNetId UAdvancedSteamFriendsLibrary::CreateSteamIDFromString(const FString SteamID64)
 {
 	FBPUniqueNetId netId;
-
+	
 #if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
 	if (!(SteamID64.Len() > 0))
 	{
@@ -220,7 +185,7 @@ FBPUniqueNetId UAdvancedSteamFriendsLibrary::CreateSteamIDFromString(const FStri
 	if (SteamAPI_Init())
 	{
 		// Already does the conversion
-		TSharedPtr<const FUniqueNetId> ValueID(new const FUniqueNetIdSteam(SteamID64));
+		TSharedPtr<const FUniqueNetId> ValueID(new const FUniqueNetIdSteam2(SteamID64));
 		//FCString::Atoi64(*SteamID64));
 		
 		netId.SetUniqueNetId(ValueID);
@@ -231,10 +196,25 @@ FBPUniqueNetId UAdvancedSteamFriendsLibrary::CreateSteamIDFromString(const FStri
 	return netId;
 }
 
+FBPUniqueNetId UAdvancedSteamFriendsLibrary::GetLocalSteamIDFromSteam()
+{
+	FBPUniqueNetId netId;
+
+#if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
+	if (SteamAPI_Init())
+	{
+		TSharedPtr<const FUniqueNetId> SteamID(new const FUniqueNetIdSteam2(SteamUser()->GetSteamID()));
+		netId.SetUniqueNetId(SteamID);
+	}
+#endif
+
+	return netId;
+}
+
 bool UAdvancedSteamFriendsLibrary::RequestSteamFriendInfo(const FBPUniqueNetId UniqueNetId, bool bRequireNameOnly)
 {
 #if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
-	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid())
+	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid() || UniqueNetId.UniqueNetId->GetType() != STEAM_SUBSYSTEM)
 	{
 		UE_LOG(AdvancedSteamFriendsLog, Warning, TEXT("RequestSteamFriendInfo Had a bad UniqueNetId!"));
 		return false;
@@ -252,10 +232,33 @@ bool UAdvancedSteamFriendsLibrary::RequestSteamFriendInfo(const FBPUniqueNetId U
 	return false;
 }
 
+
+bool UAdvancedSteamFriendsLibrary::OpenSteamUserOverlay(const FBPUniqueNetId UniqueNetId, ESteamUserOverlayType DialogType)
+{
+#if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
+	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid() || UniqueNetId.UniqueNetId->GetType() != STEAM_SUBSYSTEM)
+	{
+		UE_LOG(AdvancedSteamFriendsLog, Warning, TEXT("OpenSteamUserOverlay Had a bad UniqueNetId!"));
+		return false;
+	}
+
+	if (SteamAPI_Init())
+	{
+		uint64 id = *((uint64*)UniqueNetId.UniqueNetId->GetBytes());
+		FString DialogName = EnumToString("ESteamUserOverlayType", (uint8)DialogType);
+		SteamFriends()->ActivateGameOverlayToUser(TCHAR_TO_ANSI(*DialogName), id);
+		return true;
+	}
+#endif
+
+	UE_LOG(AdvancedSteamFriendsLog, Warning, TEXT("OpenSteamUserOverlay Couldn't init steamAPI!"));
+	return false;
+}
+
 UTexture2D * UAdvancedSteamFriendsLibrary::GetSteamFriendAvatar(const FBPUniqueNetId UniqueNetId, EBlueprintAsyncResultSwitch &Result, SteamAvatarSize AvatarSize)
 {
 #if PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX
-	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid())
+	if (!UniqueNetId.IsValid() || !UniqueNetId.UniqueNetId->IsValid() || UniqueNetId.UniqueNetId->GetType() != STEAM_SUBSYSTEM)
 	{
 		UE_LOG(AdvancedSteamFriendsLog, Warning, TEXT("GetSteamFriendAvatar Had a bad UniqueNetId!"));
 		Result = EBlueprintAsyncResultSwitch::OnFailure;

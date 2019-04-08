@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-SaveGameHelper.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.obj"
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Development\SaveGameHelper\Module.SaveGameHelper.cpp.obj"
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Development\SaveGameHelper\Module.SaveGameHelper.gen.cpp.obj"
+"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Development\SaveGameHelper\Default.rc2.res"
+/OUT:"Z:\Projectz\Unreal Engine\Projects\Dredge\Plugins\SaveGameHelper\Intermediate\Build\Win64\UE4Editor\Development\SaveGameHelper\UE4Editor-SaveGameHelper.lib"
+/INCLUDE:IMPLEMENT_MODULE_SaveGameHelper
