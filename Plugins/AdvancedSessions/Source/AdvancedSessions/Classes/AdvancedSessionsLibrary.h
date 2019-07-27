@@ -6,12 +6,12 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Online.h"
 #include "OnlineSubsystem.h"
-#include "OnlineFriendsInterface.h"
-#include "OnlineUserInterface.h"
-#include "OnlineMessageInterface.h"
-#include "OnlinePresenceInterface.h"
+#include "Interfaces/OnlineFriendsInterface.h"
+#include "Interfaces/OnlineUserInterface.h"
+#include "Interfaces/OnlineMessageInterface.h"
+#include "Interfaces/OnlinePresenceInterface.h"
 #include "Engine/GameInstance.h"
-#include "OnlineSessionInterface.h"
+#include "Interfaces/OnlineSessionInterface.h"
 
 //#include "UObjectIterator.h"
 
@@ -59,6 +59,14 @@ public:
 		// Check if a session result is valid or not
 		UFUNCTION(BlueprintPure, Category = "Online|AdvancedSessions|SessionInfo")
 		static bool IsValidSession(const FBlueprintSessionResult & SessionResult);
+
+		// Get a string copy of a session ID
+		UFUNCTION(BlueprintPure, Category = "Online|AdvancedSessions|SessionInfo")
+		static void GetSessionID_AsString(const FBlueprintSessionResult & SessionResult, FString& SessionID);
+
+		// Get a string copy of the current session ID
+		UFUNCTION(BlueprintPure, Category = "Online|AdvancedSessions|SessionInfo")
+		static void GetCurrentSessionID_AsString(FString& SessionID);
 
 		// Get the Unique Current Build ID
 		UFUNCTION(BlueprintPure, Category = "Online|AdvancedSessions|SessionInfo")
